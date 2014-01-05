@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="hcz" />
-    <title>{{ page.title }}</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+
+{% include meta.html %}
+
+{% include jquery.html %}
+
+{% include style.html %}
+
+{% include bgload.html %}
+
 </head>
+
 <body>
-    {{ content }}
-    {% include cc-by-sa.html %}
-    {% include bgimage.html %}
+
+{{ content }}
+
+{% include cc-by-sa.html %}
+
 </body>
+
 </html>
