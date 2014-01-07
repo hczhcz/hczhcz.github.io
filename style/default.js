@@ -48,5 +48,7 @@ $(function() {
 
     ib.mouseenter(gotop).mouseleave(gobottom);
     $(window).scroll(gobottom);
-    ib.mouseenter().mouseleave();
+    ib.load(function() {
+        ib.mouseenter().mouseleave();
+    });
 });
