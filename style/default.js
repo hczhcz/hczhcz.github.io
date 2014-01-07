@@ -1,12 +1,5 @@
-$(function(){
-    $.backstretch([
-        "/bgimages/" + Math.floor(Math.random() * 20) + ".jpg"
-    ]);
+$(function() {
+    $.backstretch([window.bgname]);
 
-    /*$("#img_bottom").realshadow({
-        followMouse: true,
-        color: '255, 255, 255',
-        type: 'drop',
-        skip: 16
-    });*/
+    $("#img_bottom").attr("src", window.ibname);
 });
