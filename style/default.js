@@ -38,8 +38,6 @@ $(function() {
 
     var gobottom = function() {
         if (
-            $(window).scrollTop() < 32
-            ||
             $(window).scrollTop() + $(window).height() > $(document).height() - 32
         ) {
             gotop();
@@ -49,8 +47,6 @@ $(function() {
     }
 
     ib.mouseenter(gotop).mouseleave(gobottom);
-
     $(window).scroll(gobottom);
-
-    gotop();
+    ib.mouseenter().mouseleave();
 });
