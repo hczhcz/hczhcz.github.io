@@ -6,8 +6,8 @@ title: hcz @ github.io
 <div id="posts" class="posts">
 {% for post in site.posts %}
     <div class="post">
-        <p class="sortdate">{{ post.date | date: "%Y-%m-%d" }}</p>
-        <p class="title"><a href="{{ post.url }}">{{ post.title }}</a></p>
+        <p class="postdate">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <p class="posttitle"><a href="{{ post.url }}">{{ post.title }}</a></p>
     </div>
 {% endfor %}
 </div>
@@ -15,8 +15,16 @@ title: hcz @ github.io
 <script>
 $("#posts").isotope({
     layoutMode: "masonry",
+    //masonry: {
+    //    columnWidth: 300
+    //},
     itemSelector: ".post",
-    sortBy: "sortdate",
-    sortAscending: true
+    sortBy: "date",
+    sortAscending: false,
+    getSortData: {
+        date: ".postdate"
+    }
 });
 </script>
+
+<script src="/scripts/getgithub.js"></script>

@@ -54,6 +54,8 @@ $(function() {
 
     ib.mouseenter(gotop).mouseleave(gobottom);
     $(window).scroll(gobottom);
+
+    // Start up animation
     ib.load(function() {
         ib.mouseenter().mouseleave();
     });
