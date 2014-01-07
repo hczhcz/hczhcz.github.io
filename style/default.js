@@ -5,7 +5,13 @@ $(function() {
 
     // Bottom image
 
-    var ib = $("#img_bottom");
+    // <img id="img_bottom" class="img_bottom" alt="" />
+    var ib = $("<img />")
+        .attr("id", "img_bottom")
+        .attr("class", "img_bottom")
+        .attr("alt", "")
+        .appendTo("body");
+
     var iblast = 0; // 1->top 2->bottom
 
     ib.attr("src", window.ibname);
