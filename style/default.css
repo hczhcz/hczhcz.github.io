@@ -4,19 +4,23 @@
     border: none;
 }
 
-html, body {
-    height: 100%;
+html {
+}
+
+body {
+    height: 10000px;
+    background-color: #202020;
+    font-family: helvetica, arial, sans-serif;
 }
 
 #content {
-    min-height: 100%;
-    height: auto !important;
 }
 
 #footer {
 }
 
 #img_bottom {
+    bottom: -100%;
+    position: fixed;
     width: 100%;
-    vertical-align: bottom;
 }
