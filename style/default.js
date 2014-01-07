@@ -1,6 +1,6 @@
 $(function(){
     $.backstretch([
-        "bgimages/" + Math.floor(Math.random() * 20) + ".jpg"
+        "/bgimages/" + Math.floor(Math.random() * 20) + ".jpg"
     ]);
 
     /*$("#img_bottom").realshadow({
