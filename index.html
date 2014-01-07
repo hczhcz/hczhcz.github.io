@@ -3,8 +3,20 @@ layout: default
 title: hcz @ github.io
 ---
 
-<ul class="posts">
+<div id="posts" class="posts">
 {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <div class="post">
+        <p class="sortdate">{{ post.date | date: "%Y-%m-%d" }}</p>
+        <p class="title"><a href="{{ post.url }}">{{ post.title }}</a></p>
+    </div>
 {% endfor %}
-</ul>
+</div>
+
+<script>
+$("#posts").isotope({
+    layoutMode: "masonry",
+    itemSelector: ".post",
+    sortBy: "sortdate",
+    sortAscending: true
+});
+</script>
