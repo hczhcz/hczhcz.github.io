@@ -1,0 +1,8 @@
+---
+---
+
+[
+{% for post in site.posts %}
+    {{ post | json }},
+{% endfor %}
+]
