@@ -8,7 +8,8 @@ var posts = $("<div />")
     .isotope({
         layoutMode: "masonry",
         masonry: {
-            columnWidth: size_x
+            columnWidth: size_x,
+            isFitWidth: true
         },
         isFitWidth: true,
         itemSelector: ".post",

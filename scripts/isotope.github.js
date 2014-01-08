@@ -16,7 +16,8 @@ $.ajax({
                 datefmt(result[item].pushed_at),
                 result[item].name,
                 result[item].html_url,
-                $(""),
+                $("<p />")
+                    .text(result[item].description),
                 [[1, 1], [1, 1], [1, 1], [1, 2], [1, 2], [2, 1], [2, 2]]
             );
         }
