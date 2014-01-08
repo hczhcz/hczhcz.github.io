@@ -15,8 +15,9 @@ $.ajax({
             this.post(
                 datefmt(result[item].pushed_at),
                 result[item].name,
-                $("<div>a</div>"),
-                [[1, 2], [2, 1]]
+                result[item].html_url,
+                $(""),
+                [[1, 1], [1, 1], [1, 1], [1, 2], [1, 2], [2, 1], [2, 2]]
             );
         }
     }

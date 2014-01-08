@@ -1,5 +1,5 @@
 var size_x = 200;
-var size_y = 160;
+var size_y = 120;
 
 // Post list (div)
 var posts = $("<div />")
@@ -21,7 +21,7 @@ var posts = $("<div />")
     .appendTo("#content");
 
     // To add data
-    jQuery.fn.extend({post: function(date, title, detail, sizes) {
+    jQuery.fn.extend({post: function(date, title, link, detail, sizes) {
         // Choose one from the size list
         var size = sizes[Math.floor(Math.random() * sizes.length)];
 
@@ -33,25 +33,58 @@ var posts = $("<div />")
             .appendTo(this);
 
         // Inner
-        var pcdiv = $("<div />")
-            .attr("class", "postcontent")
-            .appendTo(pdiv);
+        if (link !== "") {
+            var pcdiv = $("<a />")
+                .attr("class", "postcontent")
+                .attr("href", link)
+                .hover(
+                    // Effect
+                    function() {
+                        $(this).fadeTo(100, 0.8);
+                    },
+                    function() {
+                        $(this).fadeTo(400, 1);
+                    }
+                )
+                .appendTo(pdiv);
+        } else {
+            var pcdiv = $("<a />")
+                .attr("class", "postcontent")
+                .appendTo(pdiv);
+        }
 
-        $("<p />")
-            .text(date)
-            .attr("class", "postdate")
-            .appendTo(pcdiv);
+        // Items
+        if (date !== "") {
+            $("<p />")
+                .text(date)
+                .attr("class", "postdate")
+                .appendTo(pcdiv);
+        } else {
+            $("<input />")
+                .text(this.find(".postdate").random().text())
+                .attr("type", "hidden")
+                .attr("class", "postdate")
+                .appendTo(pcdiv);
+        }
 
-        $("<p />")
-            .text(title)
-            .attr("class", "posttitle")
-            .appendTo(pcdiv);
+        if (title !== "") {
+            $("<h3 />")
+                .text(title)
+                .attr("class", "posttitle")
+                .appendTo(pcdiv);
+        } else {
+            $("<input />")
+                .text(this.find("#posttitle").random().text())
+                .attr("type", "hidden")
+                .attr("class", "posttitle")
+                .appendTo(pcdiv);
+        }
 
-        var ddiv = $("<div />")
-            .attr("class", "postdetail")
-            .appendTo(pcdiv);
-
-        detail.appendTo(ddiv);
+        detail.appendTo(
+            $("<div />")
+                .attr("class", "postdetail")
+                .appendTo(pcdiv)
+        );
 
         this.isotope("insert", pdiv);
 
