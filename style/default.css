@@ -44,5 +44,28 @@ a {
     bottom: 2px;
     background: white;
     background: rgba(255, 255, 255, 0.5);
-    padding: 4px;
+    padding: 6px;
+    text-decoration: none;
+    cursor: default;
+}
+
+.postdate {
+    text-align: right;
+    font-style: italic;
+}
+
+.posttitle {
+}
+
+.postdetail {
+}
+
+.bigicon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top:-60px;
+    margin-left:-60px;
+    width: 120px;
+    height: 120px;
 }
