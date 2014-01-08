@@ -3,28 +3,6 @@ layout: default
 title: hcz @ github.io
 ---
 
-<div id="posts" class="posts">
-{% for post in site.posts %}
-    <div class="post">
-        <p class="postdate">{{ post.date | date: "%Y-%m-%d" }}</p>
-        <p class="posttitle"><a href="{{ post.url }}">{{ post.title }}</a></p>
-    </div>
-{% endfor %}
-</div>
-
-<script>
-$("#posts").isotope({
-    layoutMode: "masonry",
-    //masonry: {
-    //    columnWidth: 300
-    //},
-    itemSelector: ".post",
-    sortBy: "date",
-    sortAscending: false,
-    getSortData: {
-        date: ".postdate"
-    }
-});
-</script>
-
-<script src="/scripts/getgithub.js"></script>
+<script src="/scripts/isotope.init.js"></script>
+<script src="/scripts/isotope.blog.js"></script>
+<script src="/scripts/isotope.github.js"></script>
