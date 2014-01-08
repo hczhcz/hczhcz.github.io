@@ -1,3 +1,28 @@
+// Extension of jQuery
+
+jQuery.fn.extend({
+    random: function() {
+        /*var result = $();
+
+        if(this.length > 0) {
+            result = result.add(
+                this[Math.floor(Math.random() * this.length)]
+            );
+        }
+
+        return result;*/
+        return this.eq(Math.floor(Math.random() * this.length));
+    },
+    cutfx: function() {
+        if (this.queue("fx").length > 1) {
+            this.queue("fx", new Array(this.queue("fx")[0]));
+        }
+        return this;
+    }
+});
+
+// Style
+
 $(function() {
     // Background image
 
@@ -15,13 +40,6 @@ $(function() {
     var iblast = 0; // 1->top 2->bottom
 
     ib.attr("src", window.ibname);
-
-    jQuery.fn.extend({cutfx: function() {
-        if (this.queue("fx").length > 1) {
-            this.queue("fx", new Array(this.queue("fx")[0]));
-        }
-        return this;
-    }});
 
     var gotop = function() {
         if (iblast !== 1) {
