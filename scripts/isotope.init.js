@@ -34,7 +34,7 @@ var posts = $("<div />")
             .appendTo(this);
 
         // Inner
-        if (link !== "") {
+        if (link !== "" && link !== undefined) {
             var pcdiv = $("<a />")
                 .attr("class", "postcontent")
                 .attr("href", link)
@@ -55,7 +55,7 @@ var posts = $("<div />")
         }
 
         // Items
-        if (date !== "") {
+        if (date !== "" && date !== undefined) {
             $("<p />")
                 .text(date)
                 .attr("class", "postdate")
@@ -68,7 +68,7 @@ var posts = $("<div />")
                 .appendTo(pcdiv);
         }
 
-        if (title !== "") {
+        if (title !== "" && title !== undefined) {
             $("<h3 />")
                 .text(title)
                 .attr("class", "posttitle")
