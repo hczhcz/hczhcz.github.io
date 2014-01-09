@@ -16,7 +16,22 @@ var posts = $("<div />")
         sortBy: "date",
         sortAscending: false,
         getSortData: {
-            date: ".postdate"
+            date: function(item) {
+                date = $(item).find(".postdate").text();
+                if (date !== "" && date !== undefined) {
+                    return date;
+                } else {
+                    return $("#posts").find(".postdate").random().text();
+                }
+            },
+            title: function(item) {
+                title = $(item).find(".posttitle").text();
+                if (title !== "" && title !== undefined) {
+                    return title;
+                } else {
+                    return $("#posts").find(".posttitle").random().text();
+                }
+            }
         }
     })
     .appendTo("#content");
@@ -60,23 +75,11 @@ var posts = $("<div />")
                 .text(date)
                 .attr("class", "postdate")
                 .appendTo(pcdiv);
-        } else {
-            $("<input />")
-                .text(this.find(".postdate").random().text())
-                .attr("type", "hidden")
-                .attr("class", "postdate")
-                .appendTo(pcdiv);
         }
 
         if (title !== "" && title !== undefined) {
             $("<h3 />")
                 .text(title)
-                .attr("class", "posttitle")
-                .appendTo(pcdiv);
-        } else {
-            $("<input />")
-                .text(this.find("#posttitle").random().text())
-                .attr("type", "hidden")
                 .attr("class", "posttitle")
                 .appendTo(pcdiv);
         }
