@@ -2,15 +2,6 @@
 
 jQuery.fn.extend({
     random: function() {
-        /*var result = $();
-
-        if(this.length > 0) {
-            result = result.add(
-                this[Math.floor(Math.random() * this.length)]
-            );
-        }
-
-        return result;*/
         return this.eq(Math.floor(Math.random() * this.length));
     },
     cutfx: function() {
@@ -48,7 +39,7 @@ $(function() {
                 $(window).height() * 2,
                 $(window).width()
             ), $(window).width() / 2
-        )
+        );
 
         if (oldw !== neww) {
             ib.animate({
@@ -96,7 +87,7 @@ $(function() {
         // Start up animation
             gotop();
             gobottom();
-        });;
+        });
 
     $(window)
         .scroll(gobottom)
