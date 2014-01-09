@@ -101,4 +101,17 @@ $(function() {
     $(window)
         .scroll(gobottom)
         .resize(gobottom);
+
+    // Skip if shift is held
+    var checkshift = function(event) {
+        if (event.shiftKey || event.ctrlKey || event.altKey) {
+            ib.css("pointer-events", "none");
+        } else {
+            ib.css("pointer-events", "auto");
+        }
+    }
+
+    $(document)
+        .keydown(checkshift)
+        .keyup(checkshift);
 });
