@@ -2,3 +2,4 @@ timezone: China
 encoding: UTF-8
 future:   true
 lsi:      true
+feedurl:  "http://hczhcz.github.io"

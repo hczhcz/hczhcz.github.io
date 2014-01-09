@@ -1,0 +1,25 @@
+---
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>hcz @ github.io</title>
+    <link href="{{ site.feedurl }}" />
+    <link href="{{ site.feedurl }}/atom.xml" rel="self" type="application/atom+xml" />
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <author>
+        <name>hcz</name>
+    </author>
+    {% for post in site.posts limit:32 %}
+    <entry>
+        <id>{{ site.feedurl }}{{ post.id }}</id>
+        <title>{{ post.title }}</title>
+        <link type="text/html" rel="alternate" href="{{ site.feedurl }}{{ post.url }}" />
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <author>
+            <name>hcz</name>
+            <uri>{{ site.feedurl }}</uri>
+        </author>
+        <content type="html">{{ post.content | xml_escape }}</content>
+    </entry>
+    {% endfor %}
+</feed>
