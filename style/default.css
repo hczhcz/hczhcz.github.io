@@ -27,6 +27,7 @@ a {
 
 .hint {
     margin: 2px;
+    overflow: hidden;
     background: white;
     background: rgba(255, 255, 255, 0.5);
     padding: 6px;
@@ -50,16 +51,20 @@ a {
 .post {
 }
 
-.postcontent {
+.postcontent, .postcategories {
     position: absolute;
     left: 2px;
     right: 2px;
-    top: 2px;
-    bottom: 2px;
+    overflow: hidden;
     background: white;
     background: rgba(255, 255, 255, 0.5);
-    padding: 6px;
     text-decoration: none;
+}
+
+.postcontent {
+    top: 2px;
+    bottom: 2px;
+    padding: 6px;
     cursor: default;
 }
 
@@ -72,6 +77,18 @@ a {
 }
 
 .postdetail {
+}
+
+.postcategories {
+    height: 32px;
+    bottom: 2px;
+    text-align: right;
+}
+
+.categoryicon {
+    float: right;
+    margin: 2px;
+    height: 28px;
 }
 
 .bigicon {

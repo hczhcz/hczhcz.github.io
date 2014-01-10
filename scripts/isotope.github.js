@@ -25,6 +25,7 @@ $.ajax({
 
         $("#posts").post(
             "",
+            [],
             "",
             "https://github.com/" + username,
             $("<img />")

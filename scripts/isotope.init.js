@@ -18,7 +18,7 @@ var posts = $("<div />")
         getSortData: {
             date: function(item) {
                 date = $(item).find(".postdate").text();
-                if (date !== "" && date !== undefined) {
+                if (date !== undefined && date !== "") {
                     return date;
                 } else {
                     return $("#posts").find(".postdate").random().text();
@@ -26,7 +26,7 @@ var posts = $("<div />")
             },
             title: function(item) {
                 title = $(item).find(".posttitle").text();
-                if (title !== "" && title !== undefined) {
+                if (title !== undefined && title !== "") {
                     return title;
                 } else {
                     return $("#posts").find(".posttitle").random().text();
@@ -49,7 +49,7 @@ var posts = $("<div />")
             .appendTo(this);
 
         // Inner
-        if (link !== "" && link !== undefined) {
+        if (link !== undefined && link !== "") {
             var pcdiv = $("<a />")
                 .attr("class", "postcontent")
                 .attr("href", link)
@@ -70,31 +70,39 @@ var posts = $("<div />")
         }
 
         // Items
-        if (date !== "" && date !== undefined) {
+        if (date !== undefined && date !== "") {
             $("<p />")
                 .text(date)
                 .attr("class", "postdate")
                 .appendTo(pcdiv);
         }
 
-        if (title !== "" && title !== undefined) {
+        if (title !== undefined && title !== "") {
             $("<h3 />")
                 .text(title)
                 .attr("class", "posttitle")
                 .appendTo(pcdiv);
         }
 
-        var ddiv = detail.appendTo(
+        detail.appendTo(
             $("<div />")
                 .attr("class", "postdetail")
                 .appendTo(pcdiv)
         );
 
-        if (categories !== [] && categories !== undefined) {
-            $("<p />")
-                .text(categories)
+        if (categories !== undefined && categories.length > 0) {
+            pcdiv.css("bottom", "34px");
+            var cdiv = $("<div />")
                 .attr("class", "postcategories")
-                .appendTo(ddiv);
+                .appendTo(pdiv);
+
+            for (var item in categories) {
+                $("<img />")
+                    .attr("class", "categoryicon")
+                    .attr("src", "/icons/" + categories[item] + ".png")
+                    .attr("alt", categories[item])
+                    .appendTo(cdiv);
+            }
         }
 
         this.isotope("insert", pdiv);
