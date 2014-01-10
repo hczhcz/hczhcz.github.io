@@ -6,11 +6,12 @@ $.ajax({
         for (var item in result) {
             this.post(
                 result[item].date,
+                ["twothreethree"],
                 result[item].title,
                 result[item].link,
                 $("<p />")
                     .text(result[item].text),
-                [[1, 1], [1, 1], [1, 1], [1, 2], [1, 2], [2, 1], [2, 2]]
+                [[1, 1], [1, 1], [2, 1]]
             );
         }
     }

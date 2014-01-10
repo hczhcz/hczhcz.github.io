@@ -14,6 +14,7 @@ $.ajax({
         for (var item in result) {
             this.post(
                 datefmt(result[item].pushed_at),
+                result[item].language ? ["GitHub", result[item].language] : ["GitHub"],
                 result[item].name,
                 result[item].html_url,
                 $("<p />")

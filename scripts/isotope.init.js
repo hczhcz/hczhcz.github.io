@@ -37,7 +37,7 @@ var posts = $("<div />")
     .appendTo("#content");
 
     // To add data
-    jQuery.fn.extend({post: function(date, title, link, detail, sizes) {
+    jQuery.fn.extend({post: function(date, categories, title, link, detail, sizes) {
         // Choose one from the size list
         var size = sizes[Math.floor(Math.random() * sizes.length)];
 
@@ -84,11 +84,18 @@ var posts = $("<div />")
                 .appendTo(pcdiv);
         }
 
-        detail.appendTo(
+        var ddiv = detail.appendTo(
             $("<div />")
                 .attr("class", "postdetail")
                 .appendTo(pcdiv)
         );
+
+        if (categories !== [] && categories !== undefined) {
+            $("<p />")
+                .text(categories)
+                .attr("class", "postcategories")
+                .appendTo(ddiv);
+        }
 
         this.isotope("insert", pdiv);
 
