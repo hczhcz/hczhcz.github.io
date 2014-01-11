@@ -80,7 +80,7 @@ a {
 }
 
 .postcategories {
-    height: 32px;
+    height: 28px;
     bottom: 2px;
     text-align: right;
 }
@@ -88,7 +88,13 @@ a {
 .categoryicon {
     float: right;
     margin: 2px;
-    height: 28px;
+    height: 24px;
+}
+
+.categorytext {
+    float: right;
+    padding: 4px;
+    height: 18px;
 }
 
 .bigicon {

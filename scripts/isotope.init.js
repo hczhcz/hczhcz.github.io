@@ -91,17 +91,30 @@ var posts = $("<div />")
         );
 
         if (categories !== undefined && categories.length > 0) {
-            pcdiv.css("bottom", "34px");
+            pcdiv.css("bottom", "30px");
             var cdiv = $("<div />")
                 .attr("class", "postcategories")
                 .appendTo(pdiv);
 
             for (var item in categories) {
-                $("<img />")
-                    .attr("class", "categoryicon")
-                    .attr("src", "/icons/" + categories[item] + ".png")
-                    .attr("alt", categories[item])
-                    .appendTo(cdiv);
+                // Check if icon exists
+                var iconurl = "/icons/" + categories[item] + ".png";
+                $.ajax({
+                    type: 'HEAD',
+                    url: iconurl,
+                    success: function() {
+                        $("<img />")
+                            .attr("class", "categoryicon")
+                            .attr("src", iconurl)
+                            .appendTo(cdiv);
+                    },
+                    error: function() {
+                        $("<div />")
+                            .attr("class", "categorytext")
+                            .text(categories[item])
+                            .appendTo(cdiv);
+                    }
+                });
             }
         }
 
