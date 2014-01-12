@@ -22,16 +22,5 @@ $.ajax({
                 [[1, 1], [1, 1], [1, 1], [1, 2], [1, 2], [2, 1], [2, 2]]
             );
         }
-
-        $("#posts").post(
-            "",
-            [],
-            "",
-            "https://github.com/" + username,
-            $("<img />")
-                .attr("class", "bigicon")
-                .attr("src", "/icons/GitHub.png"),
-            [[1, 2]]
-        );
     }
 });
