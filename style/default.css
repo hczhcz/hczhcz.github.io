@@ -16,6 +16,8 @@ body {
 
 a {
     color: black;
+    text-decoration: none;
+    outline: none;
 }
 
 .content {
@@ -51,21 +53,28 @@ a {
 .post {
 }
 
-.postcontent, .postcategories {
-    position: absolute;
-    left: 2px;
-    right: 2px;
-    overflow: hidden;
-    background: white;
-    background: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-}
-
 .postcontent {
+    position: absolute;
     top: 2px;
     bottom: 2px;
-    padding: 6px;
+    left: 2px;
+    right: 2px;
+    background: white;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.postlink, .postcategories {
+    overflow: hidden;
     cursor: default;
+}
+
+.postlink {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 6px;
 }
 
 .postdate {
@@ -80,9 +89,11 @@ a {
 }
 
 .postcategories {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     height: 28px;
-    bottom: 2px;
-    text-align: right;
 }
 
 .categoryicon {

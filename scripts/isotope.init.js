@@ -49,24 +49,27 @@ var posts = $("<div />")
             .appendTo(this);
 
         // Inner
+        var pcdiv = $("<div />")
+            .attr("class", "postcontent")
+            .appendTo(pdiv);
+
+        var pca = $("<a />")
+            .attr("class", "postlink")
+            .appendTo(pcdiv);
+
+        // Inner link
         if (link !== undefined && link !== "") {
-            var pcdiv = $("<a />")
-                .attr("class", "postcontent")
-                .attr("href", link)
-                .hover(
-                    // Effect
-                    function() {
-                        $(this).fadeTo(100, 0.8);
-                    },
-                    function() {
-                        $(this).fadeTo(400, 1);
-                    }
-                )
-                .appendTo(pdiv);
-        } else {
-            var pcdiv = $("<a />")
-                .attr("class", "postcontent")
-                .appendTo(pdiv);
+            pca.attr("href", link);
+
+            pcdiv.hover(
+                // Effect
+                function() {
+                    $(this).fadeTo(100, 0.8);
+                },
+                function() {
+                    $(this).fadeTo(400, 1);
+                }
+            );
         }
 
         // Items
@@ -74,31 +77,31 @@ var posts = $("<div />")
             $("<p />")
                 .text(date)
                 .attr("class", "postdate")
-                .appendTo(pcdiv);
+                .appendTo(pca);
         }
 
         if (title !== undefined && title !== "") {
             $("<h3 />")
                 .text(title)
                 .attr("class", "posttitle")
-                .appendTo(pcdiv);
+                .appendTo(pca);
         }
 
         detail.appendTo(
             $("<div />")
                 .attr("class", "postdetail")
-                .appendTo(pcdiv)
+                .appendTo(pca)
         );
 
         if (categories !== undefined && categories.length > 0) {
-            pcdiv.css("bottom", "30px");
+            pca.css("bottom", "28px");
             var cdiv = $("<div />")
                 .attr("class", "postcategories")
-                .appendTo(pdiv);
+                .appendTo(pcdiv);
 
-            for (var item in categories) {
+            // To make a closure
+            var ajaxicon = function(iconname, iconurl) {
                 // Check if icon exists
-                var iconurl = "/icons/" + categories[item] + ".png";
                 $.ajax({
                     type: 'HEAD',
                     url: iconurl,
@@ -111,10 +114,14 @@ var posts = $("<div />")
                     error: function() {
                         $("<div />")
                             .attr("class", "categorytext")
-                            .text(categories[item])
+                            .text(iconname)
                             .appendTo(cdiv);
                     }
                 });
+            }
+
+            for (var item in categories) {
+                ajaxicon(categories[item], "/icons/" + categories[item] + ".png");
             }
         }
 
