@@ -19,6 +19,7 @@
             <name>hcz</name>
             <uri>{{ site.feedurl }}</uri>
         </author>
+        <summary>{{ post.abstract }}</summary>
         <content type="html">{{ post.content | xml_escape }}</content>
     </entry>
     {% endfor %}
