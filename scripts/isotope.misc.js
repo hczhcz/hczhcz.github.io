@@ -6,7 +6,7 @@ $("#posts").post(
     "",
     "https://github.com/" + username,
     $("<img />")
-        .attr("class", "bigicon")
+        .addClass("bigicon")
         .attr("src", "/icons/GitHub.png"),
     [[1, 2]]
 );

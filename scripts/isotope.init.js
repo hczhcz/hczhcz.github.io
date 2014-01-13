@@ -3,8 +3,8 @@ var size_y = 120;
 
 // Post list (div)
 var posts = $("<div />")
+    .addClass("posts")
     .attr("id", "posts")
-    .attr("class", "posts")
     .isotope({
         layoutMode: "masonry",
         masonry: {
@@ -43,18 +43,18 @@ var posts = $("<div />")
 
         // Outer
         var pdiv = $("<div />")
-            .attr("class", "post")
+            .addClass("post")
             .width(size_x * size[0])
             .height(size_y * size[1])
             .appendTo(this);
 
         // Inner
         var pcdiv = $("<div />")
-            .attr("class", "postcontent")
+            .addClass("postcontent")
             .appendTo(pdiv);
 
         var pca = $("<a />")
-            .attr("class", "postlink")
+            .addClass("postlink")
             .appendTo(pcdiv);
 
         // Inner link
@@ -76,27 +76,27 @@ var posts = $("<div />")
         if (date !== undefined && date !== "") {
             $("<p />")
                 .text(date)
-                .attr("class", "postdate")
+                .addClass("postdate")
                 .appendTo(pca);
         }
 
         if (title !== undefined && title !== "") {
             $("<h3 />")
                 .text(title)
-                .attr("class", "posttitle")
+                .addClass("posttitle")
                 .appendTo(pca);
         }
 
         detail.appendTo(
             $("<div />")
-                .attr("class", "postdetail")
+                .addClass("postdetail")
                 .appendTo(pca)
         );
 
         if (categories !== undefined && categories.length > 0) {
             pca.css("bottom", "28px");
             var cdiv = $("<div />")
-                .attr("class", "postcategories")
+                .addClass("postcategories")
                 .appendTo(pcdiv);
 
             // To make a closure
@@ -107,13 +107,13 @@ var posts = $("<div />")
                     url: iconurl,
                     success: function() {
                         $("<img />")
-                            .attr("class", "categoryicon")
+                            .addClass("categoryicon")
                             .attr("src", iconurl)
                             .appendTo(cdiv);
                     },
                     error: function() {
                         $("<div />")
-                            .attr("class", "categorytext")
+                            .addClass("categorytext")
                             .text(iconname)
                             .appendTo(cdiv);
                     }

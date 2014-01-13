@@ -21,10 +21,9 @@ $(function() {
 
     // Bottom image
 
-    // <img id="img_bottom" class="img_bottom" alt="" />
     var ib = $("<img />")
+        .addClass("img_bottom")
         .attr("id", "img_bottom")
-        .attr("class", "img_bottom")
         .attr("alt", "")
         .appendTo("body");
 
