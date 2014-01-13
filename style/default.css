@@ -27,11 +27,11 @@ a {
 .footer {
 }
 
-.hint {
+.hint, .blog {
     margin: 2px;
     overflow: hidden;
     background: white;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.8);
     padding: 6px;
 }
 
