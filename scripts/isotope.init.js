@@ -17,17 +17,17 @@ var posts = $("<div />")
         sortAscending: false,
         getSortData: {
             date: function(item) {
-                date = $(item).find(".postdate").text();
-                if (date !== undefined && date !== "") {
-                    return date;
+                var date = $(item).find(".postdate");
+                if (date.length > 0) {
+                    return date.text();
                 } else {
                     return $("#posts").find(".postdate").random().text();
                 }
             },
             title: function(item) {
-                title = $(item).find(".posttitle").text();
-                if (title !== undefined && title !== "") {
-                    return title;
+                var title = $(item).find(".posttitle");
+                if (title.length > 0) {
+                    return title.text();
                 } else {
                     return $("#posts").find(".posttitle").random().text();
                 }
