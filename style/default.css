@@ -1,4 +1,4 @@
-/* default.html */
+/* default.html and misc */
 
 * {
     padding: 0;
@@ -116,4 +116,23 @@ a {
     margin-left:-60px;
     width: 120px;
     height: 120px;
+}
+
+/* post.html */
+
+.blogdate {
+    font-style: italic;
+}
+
+.blogtitle {
+}
+
+.blogcategories {
+}
+
+.blogabstract {
+}
+
+.blog {
+    text-indent: 2em;
 }
