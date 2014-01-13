@@ -103,7 +103,7 @@ var posts = $("<div />")
             var ajaxicon = function(iconname, iconurl) {
                 // Check if icon exists
                 $.ajax({
-                    type: 'HEAD',
+                    type: "HEAD",
                     url: iconurl,
                     success: function() {
                         $("<img />")

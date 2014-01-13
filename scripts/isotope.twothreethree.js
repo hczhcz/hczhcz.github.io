@@ -6,7 +6,7 @@ $.ajax({
         for (var item in result) {
             this.post(
                 result[item].date,
-                ["twothreethree"],
+                ["TwoThreeThree"],
                 result[item].title,
                 result[item].link,
                 $("<p />")

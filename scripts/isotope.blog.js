@@ -4,7 +4,7 @@
 {% for post in site.posts %}
 $("#posts").post(
     "{{ post.date | date: "%Y-%m-%d" }}",
-    ["Post", "{{ post.categories }}"],
+    ["Blog", "{{ post.categories }}"],
     "{{ post.title }}",
     "{{ post.url }}",
     $("<p />").text("{{ post.abstract }}"),
