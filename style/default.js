@@ -41,10 +41,19 @@ $(function() {
         );
 
         if (oldw !== neww) {
-            ib.animate({
-                width: neww,
-                bottom: - neww / 9
-            });
+            if (
+                $(window).scrollTop() + $(window).height() > $(document).height() - 32
+            ) {
+                ib.animate({
+                    width: neww,
+                    bottom: 0
+                });
+            } else {
+                ib.animate({
+                    width: neww,
+                    bottom: - neww / 9
+                });
+            }
             oldw = neww;
         }
     }
@@ -91,6 +100,8 @@ $(function() {
     $(window)
         .scroll(gobottom)
         .resize(gobottom);
+
+    window.setInterval(fixsize, 1000);
 
     // Skip if shift is held
     var checkshift = function(event) {
