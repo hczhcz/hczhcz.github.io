@@ -20,11 +20,8 @@ a {
     outline: none;
 }
 
-.content {
+.content, .footer {
     padding: 0 10%;
-}
-
-.footer {
 }
 
 .hint, .blog {
