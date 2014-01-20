@@ -17,9 +17,9 @@ $("#posts").post(
     "",
     "/rss.xml",
     $("<img />")
-        .addClass("bigicon")
+        .addClass("midicon")
         .attr("src", "/icons/Feed_big.png"),
-    [[1, 2]]
+    [[1, 1]]
 );
 
 $("#posts").post(
@@ -28,7 +28,7 @@ $("#posts").post(
     "",
     "/atom.xml",
     $("<img />")
-        .addClass("bigicon")
+        .addClass("midicon")
         .attr("src", "/icons/Feed_big.png"),
-    [[1, 2]]
+    [[1, 1]]
 );
