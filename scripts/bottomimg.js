@@ -34,6 +34,10 @@ $(function() {
             }
             oldw = neww;
         }
+
+        $("body").animate({
+            "padding-bottom": ib.height()
+        });
     }
 
     var gotop = function() {
@@ -57,7 +61,7 @@ $(function() {
 
     var gobottom = function() {
         if (
-            $(window).scrollTop() + $(window).height() > $(document).height() - 32
+            $(window).scrollTop() + $(window).height() > $(document).height() - ib.height()
         ) {
             gotop();
         } else {
