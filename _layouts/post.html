@@ -6,7 +6,7 @@ layout: default
 
 <h1 class="blogtitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
 <p class="blogdate">{{ page.date | date: "%Y-%m-%d" }}</p>
-<p class="blogcategories">{{ page.categories }}</p>
+<p class="blogtags">{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}</p>
 
 </div>
 

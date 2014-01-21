@@ -37,7 +37,7 @@ var posts = $("<div />")
     .appendTo("#content");
 
     // To add data
-    jQuery.fn.extend({post: function(date, categories, title, link, detail, sizes) {
+    jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
         // Choose one from the size list
         var size = sizes[Math.floor(Math.random() * sizes.length)];
 
@@ -93,10 +93,10 @@ var posts = $("<div />")
                 .appendTo(pca)
         );
 
-        if (categories !== undefined && categories.length > 0) {
+        if (tags !== undefined && tags.length > 0) {
             pca.css("bottom", "28px");
             var cdiv = $("<div />")
-                .addClass("postcategories")
+                .addClass("posttags")
                 .appendTo(pcdiv);
 
             // To make a closure
@@ -107,21 +107,21 @@ var posts = $("<div />")
                     url: iconurl,
                     success: function() {
                         $("<img />")
-                            .addClass("categoryicon")
+                            .addClass("tagicon")
                             .attr("src", iconurl)
                             .appendTo(cdiv);
                     },
                     error: function() {
                         $("<div />")
-                            .addClass("categorytext")
+                            .addClass("tagtext")
                             .text(iconname)
                             .appendTo(cdiv);
                     }
                 });
             }
 
-            for (var item in categories) {
-                ajaxicon(categories[item], "/icons/" + categories[item] + ".png");
+            for (var item in tags) {
+                ajaxicon(tags[item], "/icons/" + tags[item] + ".png");
             }
         }
 

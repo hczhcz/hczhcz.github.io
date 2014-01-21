@@ -60,7 +60,7 @@ a {
     background: rgba(255, 255, 255, 0.6);
 }
 
-.postlink, .postcategories {
+.postlink, .posttags {
     overflow: hidden;
     cursor: default;
 }
@@ -85,7 +85,7 @@ a {
 .postdetail {
 }
 
-.postcategories {
+.posttags {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -93,13 +93,13 @@ a {
     height: 28px;
 }
 
-.categoryicon {
+.tagicon {
     float: right;
     margin: 2px;
     height: 24px;
 }
 
-.categorytext {
+.tagtext {
     float: right;
     padding: 4px;
     height: 18px;
@@ -131,10 +131,7 @@ a {
 .blogtitle {
 }
 
-.blogcategories {
-}
-
-.blogabstract {
+.blogtags {
 }
 
 .blog {
