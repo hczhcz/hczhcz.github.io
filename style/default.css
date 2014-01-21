@@ -20,17 +20,19 @@ a {
     outline: none;
 }
 
-.content, .footer {
+.content {
     padding: 0 10%;
 }
 
-.hint, .blog {
+.hint, .blog, .footer {
     margin: 2px;
     overflow: hidden;
     background: white;
     background: rgba(255, 255, 255, 0.8);
     padding: 6px;
 }
+
+/* index.html */
 
 .img_bottom {
     bottom: -100%;
@@ -40,8 +42,6 @@ a {
     margin: 0 auto;
     width: 100%;
 }
-
-/* index.html */
 
 .posts {
     margin: 0 auto;
@@ -139,4 +139,8 @@ a {
 
 .blog {
     text-indent: 2em;
+}
+
+.footer {
+    text-align: center;
 }
