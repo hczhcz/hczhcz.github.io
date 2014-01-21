@@ -1,4 +1,4 @@
-/* default.html and misc */
+/* common style */
 
 * {
     padding: 0;
@@ -14,17 +14,58 @@ body {
     font-family: helvetica, arial, sans-serif;
 }
 
+.blog p,
+h1, h2, h3, h4, h5, h6,
+ul, ol, pre
+{
+    margin: 6px 0;
+}
+
 a {
     color: black;
     text-decoration: none;
     outline: none;
 }
 
+ul, ol {
+    margin-left: 2em;
+}
+
+hr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    margin: 12px 0;
+}
+
+blockquote {
+    background: white;
+    background: rgba(255, 255, 255, 0.2);
+    border-left: 6px solid rgba(255, 255, 255, 0.4);
+    margin: 12px 0;
+    padding: 6px;
+}
+
+code {
+    background: white;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 6px;
+    padding: 4px;
+    height: 18px;
+}
+
+pre code {
+    display: block;
+    margin: 12px 0;
+    padding: 0px;
+    height: auto;
+}
+
+/* content */
+
 .content {
     padding: 0 10%;
 }
 
-.hint, .blog, .footer {
+.hint, .header, .blog, .footer {
     margin: 2px;
     overflow: hidden;
     background: white;
@@ -80,6 +121,7 @@ a {
 }
 
 .posttitle {
+    margin: 0;
 }
 
 .postdetail {
@@ -124,6 +166,10 @@ a {
 
 /* post.html */
 
+.blog {
+    border-left: 6px solid rgba(255, 255, 255, 0.4);
+}
+
 .blogdate {
     font-style: italic;
 }
@@ -132,10 +178,6 @@ a {
 }
 
 .blogtags {
-}
-
-.blog {
-    text-indent: 2em;
 }
 
 .footer {
