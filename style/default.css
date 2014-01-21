@@ -28,7 +28,7 @@ a {
     margin: 2px;
     overflow: hidden;
     background: white;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.6);
     padding: 6px;
 }
 
@@ -57,7 +57,7 @@ a {
     left: 2px;
     right: 2px;
     background: white;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
 }
 
 .postlink, .postcategories {
@@ -67,10 +67,10 @@ a {
 
 .postlink {
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 6px;
 }
 
@@ -87,9 +87,9 @@ a {
 
 .postcategories {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
     height: 28px;
 }
 
