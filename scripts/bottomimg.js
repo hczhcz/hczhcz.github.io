@@ -9,6 +9,10 @@ $(function() {
 
     ib.attr("src", window.ibname);
 
+    var isbuttom = function() {
+        return $(window).scrollTop() + $(window).height() > $(document).height() - ib.height();
+    }
+
     var oldw = 0;
     var fixsize = function() {
         var neww = Math.max(
@@ -18,24 +22,26 @@ $(function() {
             ), $(window).width() / 2
         );
 
-        if (oldw !== neww) {
-            if (
-                $(window).scrollTop() + $(window).height() > $(document).height() - 32
-            ) {
-                ib.animate({
-                    width: neww,
-                    bottom: 0
-                });
+        if (oldw !== neww || (ib.queue("fx").length == 0 && ib.width() !== neww)) {
+            if (isbuttom()) {
+                ib
+                    .cutfx()
+                    .animate({
+                        width: neww,
+                        bottom: 0
+                    });
             } else {
-                ib.animate({
-                    width: neww,
-                    bottom: - neww / 9
-                });
+                ib
+                    .cutfx()
+                    .animate({
+                        width: neww,
+                        bottom: - neww / 9
+                    });
             }
             oldw = neww;
         }
 
-        $("body").animate({
+        $("body").cutfx().animate({
             "padding-bottom": ib.height()
         });
     }
@@ -60,9 +66,7 @@ $(function() {
     }
 
     var gobottom = function() {
-        if (
-            $(window).scrollTop() + $(window).height() > $(document).height() - ib.height()
-        ) {
+        if (isbuttom()) {
             gotop();
         } else {
             gorun();
