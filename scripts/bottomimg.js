@@ -1,16 +1,31 @@
 $(function() {
+    var iblast = 0; // 1->top 2->bottom
+
     var ib = $("<img />")
         .addClass("img_bottom")
         .attr("id", "img_bottom")
         .attr("alt", "")
         .appendTo("body");
 
-    var iblast = 0; // 1->top 2->bottom
+    var tbenable = false;
+
+    var tb = $("<div />")
+        .addClass("div_bottom")
+        .attr("id", "div_bottom")
+        .mouseleave(function() {
+            tbenable = false;
+        })
+        .appendTo("body");
+
+    $("<div />")
+        .addClass("div_bottom_shadow")
+        .attr("id", "div_bottom_shadow")
+        .appendTo(tb);
 
     ib.attr("src", window.ibname);
 
     var isbuttom = function() {
-        return $(window).scrollTop() + $(window).height() > $(document).height() - ib.height();
+        return tbenable || $(window).scrollTop() + $(window).height() > $(document).height() - ib.height();
     }
 
     var oldw = 0;
@@ -44,6 +59,24 @@ $(function() {
         $("body").cutfx().animate({
             "padding-bottom": ib.height()
         });
+
+        if (
+            $(window).scrollTop() + $(window).height() === $(document).height()
+            &&
+            $(window).scrollTop() > 0
+        ) {
+            tbenable = true;
+        }
+
+        if (tbenable) {
+            tb.cutfx().animate({
+                "height": ib.height()
+            }, 800, "easeOutBounce");
+        } else {
+            tb.cutfx().animate({
+                "height": 0
+            }, 800, "easeOutBounce");
+        }
     }
 
     var gotop = function() {
@@ -77,14 +110,20 @@ $(function() {
     ib
         .mouseenter(gotop)
         .mouseleave(gobottom)
+        .click(function() {
+            tbenable = true;
+        })
         .load(function() {
-        // Start up animation
+            // Start up animation
             gotop();
             gobottom();
         });
 
     $(window)
-        .scroll(gobottom)
+        .scroll(function() {
+            tbenable = false;
+            gobottom();
+        })
         .resize(gobottom);
 
     window.setInterval(fixsize, 1000);
