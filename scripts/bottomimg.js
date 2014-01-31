@@ -7,22 +7,39 @@ $(function() {
         .attr("alt", "")
         .appendTo("body");
 
+    ib.attr("src", window.ibname);
+
     var tbenable = false;
+
+    var tbupdate = function() {
+        if (
+            $(window).scrollTop() + $(window).height() === $(document).height()
+            &&
+            $(window).scrollTop() > 0
+        ) {
+            tbenable = true;
+        }
+
+        if (tbenable) {
+            tb.cutfx().animate({
+                "height": ib.height()
+            }, 800, "easeOutBounce");
+        } else {
+            tb.cutfx().animate({
+                "height": 0
+            }, 800, "easeOutBounce");
+        }
+    }
 
     var tb = $("<div />")
         .addClass("div_bottom")
         .attr("id", "div_bottom")
-        .mouseleave(function() {
-            tbenable = false;
-        })
         .appendTo("body");
 
     $("<div />")
         .addClass("div_bottom_shadow")
         .attr("id", "div_bottom_shadow")
         .appendTo(tb);
-
-    ib.attr("src", window.ibname);
 
     var isbuttom = function() {
         return tbenable || $(window).scrollTop() + $(window).height() > $(document).height() - ib.height();
@@ -60,23 +77,7 @@ $(function() {
             "padding-bottom": ib.height()
         });
 
-        if (
-            $(window).scrollTop() + $(window).height() === $(document).height()
-            &&
-            $(window).scrollTop() > 0
-        ) {
-            tbenable = true;
-        }
-
-        if (tbenable) {
-            tb.cutfx().animate({
-                "height": ib.height()
-            }, 800, "easeOutBounce");
-        } else {
-            tb.cutfx().animate({
-                "height": 0
-            }, 800, "easeOutBounce");
-        }
+        tbupdate();
     }
 
     var gotop = function() {
@@ -112,6 +113,7 @@ $(function() {
         .mouseleave(gobottom)
         .click(function() {
             tbenable = true;
+            tbupdate();
         })
         .load(function() {
             // Start up animation
@@ -119,9 +121,17 @@ $(function() {
             gobottom();
         });
 
+    tb
+        .mouseleave(function() {
+            tbenable = false;
+            tbupdate();
+            gobottom();
+        });
+
     $(window)
         .scroll(function() {
             tbenable = false;
+            tbupdate();
             gobottom();
         })
         .resize(gobottom);
