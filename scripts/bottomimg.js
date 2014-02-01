@@ -107,6 +107,12 @@ $(function() {
         }
     }
 
+    var tboff = function() {
+        tbenable = false;
+        tbupdate();
+        gobottom();
+    }
+
     // Events
     ib
         .mouseenter(gotop)
@@ -122,18 +128,13 @@ $(function() {
         });
 
     tb
-        .mouseleave(function() {
-            tbenable = false;
-            tbupdate();
-            gobottom();
-        });
+        .mouseleave(tboff);
+
+    $(".base")
+        .click(tboff);
 
     $(window)
-        .scroll(function() {
-            tbenable = false;
-            tbupdate();
-            gobottom();
-        })
+        .scroll(tboff)
         .resize(gobottom);
 
     window.setInterval(fixsize, 1000);
