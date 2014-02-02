@@ -4,6 +4,7 @@ var size_y = 120;
 var hastagprefix = "hastag";
 
 var tagset = {};
+var tagmode = {};
 
 // Post list (div)
 var posts = $("<div />")
@@ -45,14 +46,13 @@ var filters = $("<div />")
     .addClass("filters")
     .attr("id", "filters")
     .isotope({
-        layoutMode: "masonry",
-        isFitWidth: true,
+        layoutMode: "fitRows",
         itemSelector: ".filter",
         sortBy: "tag",
-        sortAscending: false,
+        sortAscending: true,
         getSortData: {
             tag: function(item) {
-                return "???????????????????";
+                return $(item).text();
             }
         }
     })
@@ -80,11 +80,39 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
         .appendTo(pcdiv);
 
     var addtag = function(tagname, pdiv) {
-        if (tagset[tagname] !== true) {
-            $("<div />")
+        if (!tagset[tagname]) {
+            var filterdiv = $("<div />")
                 .text(tagname)
                 .addClass("filter")
+                .click(function() {
+                    var thistag = $(this).text();
+                    if(tagmode[thistag] === 1) {
+                        tagmode[thistag] = 2;
+                    } else if (tagmode[thistag === 2]) {
+                        tagmode[thistag] = 0;
+                    } else {
+                        tagmode[thistag] = 1;
+                    }
+
+                    posts.isotope({
+                        filter: function() {
+                            for (var item in tagmode) {
+                                var hastag = $(this).hasClass(hastagprefix + item);
+                                if (tagmode[item] === 1 && hastag) {
+                                    return true;
+                                }
+                                if (tagmode[item] === 2 && !hastag) {
+                                    return false;
+                                }
+                            }
+
+                            return false;
+                        }
+                    });
+                })
                 .appendTo(filters);
+
+            filters.isotope("insert", filterdiv);
         }
 
         pdiv.addClass(hastagprefix + tagname);
