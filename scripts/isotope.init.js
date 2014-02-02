@@ -1,6 +1,8 @@
 var size_x = 200;
 var size_y = 120;
 
+var hastagprefix = "_hastag";
+
 // Post list (div)
 var posts = $("<div />")
     .addClass("posts")
@@ -36,6 +38,24 @@ var posts = $("<div />")
     })
     .appendTo("#content");
 
+// Tag filterr list (div)
+var filters = $("<div />")
+    .addClass("filters")
+    .attr("id", "filters")
+    .isotope({
+        layoutMode: "masonry",
+        isFitWidth: true,
+        itemSelector: ".filter",
+        sortBy: "tag",
+        sortAscending: false,
+        getSortData: {
+            tag: function(item) {
+                return "???????????????????";
+            }
+        }
+    })
+    .appendTo("#div_bottom");
+
     // To add data
     jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
         // Choose one from the size list
@@ -56,6 +76,12 @@ var posts = $("<div />")
         var pca = $("<a />")
             .addClass("postlink")
             .appendTo(pcdiv);
+
+        var addtag = function(tagname, pdiv) {
+            pdiv.addClass(hastagprefix + tagname);
+
+            //.appentTo(filters);
+        }
 
         // Inner link
         if (link !== undefined && link !== "") {
@@ -78,6 +104,8 @@ var posts = $("<div />")
                 .text(date)
                 .addClass("postdate")
                 .appendTo(pca);
+
+            addtag(value.substr(0, 7), pdiv);
         }
 
         if (title !== undefined && title !== "") {
@@ -122,6 +150,8 @@ var posts = $("<div />")
 
             for (var item in tags) {
                 ajaxicon(tags[item], "/icons/" + tags[item] + ".png");
+
+                addtag(tags[item], pdiv);
             }
         }
 

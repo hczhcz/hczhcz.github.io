@@ -130,7 +130,7 @@ $(function() {
     tb
         .mouseleave(tboff);
 
-    $(".base")
+    $("#base")
         .click(tboff);
 
     $(window)

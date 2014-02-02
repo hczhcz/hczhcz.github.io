@@ -92,6 +92,7 @@ pre code {
     background: #202020;
     box-shadow: 0 -2px 2px #808080;
     opacity: 0.96;
+    overflow: hidden;
 }
 
 .div_bottom_shadow {
