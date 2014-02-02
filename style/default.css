@@ -37,19 +37,19 @@ hr {
 }
 
 blockquote {
-    background: white;
-    background: rgba(255, 255, 255, 0.2);
     border-left: 6px solid rgba(255, 255, 255, 0.4);
     margin: 12px 0;
     padding: 6px;
+    background: white;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 code {
-    background: white;
-    background: rgba(255, 255, 255, 0.2);
     margin: 6px;
     padding: 4px;
     height: 18px;
+    background: white;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 pre code {
@@ -67,10 +67,10 @@ pre code {
 
 .hint, .header, .blog, .footer {
     margin: 2px;
+    padding: 6px;
     overflow: hidden;
     background: white;
     background: rgba(255, 255, 255, 0.6);
-    padding: 6px;
 }
 
 /* index.html */

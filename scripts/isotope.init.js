@@ -105,7 +105,7 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
             .addClass("postdate")
             .appendTo(pca);
 
-        addtag(value.substr(0, 7), pdiv);
+        addtag(date.substr(0, 7), pdiv);
     }
 
     if (title !== undefined && title !== "") {
