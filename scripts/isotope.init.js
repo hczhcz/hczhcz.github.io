@@ -56,106 +56,106 @@ var filters = $("<div />")
     })
     .appendTo("#div_bottom");
 
-    // To add data
-    jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
-        // Choose one from the size list
-        var size = sizes[Math.floor(Math.random() * sizes.length)];
+// To add data
+jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
+    // Choose one from the size list
+    var size = sizes[Math.floor(Math.random() * sizes.length)];
 
-        // Outer
-        var pdiv = $("<div />")
-            .addClass("post")
-            .width(size_x * size[0])
-            .height(size_y * size[1])
-            .appendTo(this);
+    // Outer
+    var pdiv = $("<div />")
+        .addClass("post")
+        .width(size_x * size[0])
+        .height(size_y * size[1])
+        .appendTo(this);
 
-        // Inner
-        var pcdiv = $("<div />")
-            .addClass("postcontent")
-            .appendTo(pdiv);
+    // Inner
+    var pcdiv = $("<div />")
+        .addClass("postcontent")
+        .appendTo(pdiv);
 
-        var pca = $("<a />")
-            .addClass("postlink")
+    var pca = $("<a />")
+        .addClass("postlink")
+        .appendTo(pcdiv);
+
+    var addtag = function(tagname, pdiv) {
+        pdiv.addClass(hastagprefix + tagname);
+
+        //.appentTo(filters);
+    }
+
+    // Inner link
+    if (link !== undefined && link !== "") {
+        pca.attr("href", link);
+
+        pcdiv.hover(
+            // Effect
+            function() {
+                $(this).fadeTo(100, 0.8);
+            },
+            function() {
+                $(this).fadeTo(400, 1);
+            }
+        );
+    }
+
+    // Items
+    if (date !== undefined && date !== "") {
+        $("<p />")
+            .text(date)
+            .addClass("postdate")
+            .appendTo(pca);
+
+        addtag(value.substr(0, 7), pdiv);
+    }
+
+    if (title !== undefined && title !== "") {
+        $("<h3 />")
+            .text(title)
+            .addClass("posttitle")
+            .appendTo(pca);
+    }
+
+    detail.appendTo(
+        $("<div />")
+            .addClass("postdetail")
+            .appendTo(pca)
+    );
+
+    if (tags !== undefined && tags.length > 0) {
+        pca.css("bottom", "28px");
+        var cdiv = $("<div />")
+            .addClass("posttags")
             .appendTo(pcdiv);
 
-        var addtag = function(tagname, pdiv) {
-            pdiv.addClass(hastagprefix + tagname);
-
-            //.appentTo(filters);
-        }
-
-        // Inner link
-        if (link !== undefined && link !== "") {
-            pca.attr("href", link);
-
-            pcdiv.hover(
-                // Effect
-                function() {
-                    $(this).fadeTo(100, 0.8);
+        // To make a closure
+        var ajaxicon = function(iconname, iconurl) {
+            // Check if icon exists
+            $.ajax({
+                type: "HEAD",
+                url: iconurl,
+                success: function() {
+                    $("<img />")
+                        .addClass("tagicon")
+                        .attr("src", iconurl)
+                        .appendTo(cdiv);
                 },
-                function() {
-                    $(this).fadeTo(400, 1);
+                error: function() {
+                    $("<div />")
+                        .addClass("tagtext")
+                        .text(iconname)
+                        .appendTo(cdiv);
                 }
-            );
+            });
         }
 
-        // Items
-        if (date !== undefined && date !== "") {
-            $("<p />")
-                .text(date)
-                .addClass("postdate")
-                .appendTo(pca);
+        for (var item in tags) {
+            ajaxicon(tags[item], "/icons/" + tags[item] + ".png");
 
-            addtag(value.substr(0, 7), pdiv);
+            addtag(tags[item], pdiv);
         }
+    }
 
-        if (title !== undefined && title !== "") {
-            $("<h3 />")
-                .text(title)
-                .addClass("posttitle")
-                .appendTo(pca);
-        }
+    this.isotope("insert", pdiv);
 
-        detail.appendTo(
-            $("<div />")
-                .addClass("postdetail")
-                .appendTo(pca)
-        );
-
-        if (tags !== undefined && tags.length > 0) {
-            pca.css("bottom", "28px");
-            var cdiv = $("<div />")
-                .addClass("posttags")
-                .appendTo(pcdiv);
-
-            // To make a closure
-            var ajaxicon = function(iconname, iconurl) {
-                // Check if icon exists
-                $.ajax({
-                    type: "HEAD",
-                    url: iconurl,
-                    success: function() {
-                        $("<img />")
-                            .addClass("tagicon")
-                            .attr("src", iconurl)
-                            .appendTo(cdiv);
-                    },
-                    error: function() {
-                        $("<div />")
-                            .addClass("tagtext")
-                            .text(iconname)
-                            .appendTo(cdiv);
-                    }
-                });
-            }
-
-            for (var item in tags) {
-                ajaxicon(tags[item], "/icons/" + tags[item] + ".png");
-
-                addtag(tags[item], pdiv);
-            }
-        }
-
-        this.isotope("insert", pdiv);
-
-        return this;
-    }});
+    return this;
+}});
