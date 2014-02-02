@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: #202020;
+    background: #202020;
     font-family: helvetica, arial, sans-serif;
 }
 
@@ -89,6 +89,7 @@ pre code {
     bottom: 0;
     left: 0;
     right: 0;
+    height: 0;
     background: #202020;
     box-shadow: 0 -2px 2px #808080;
     opacity: 0.96;
@@ -97,10 +98,10 @@ pre code {
 
 .div_bottom_shadow {
     position: absolute;
-    top: -5px;
+    top: -3px;
     left: 0;
     right: 0;
-    height: 5px;
+    height: 3px;
     box-shadow: 0 3px 2px 1px #181818;
 }
 
@@ -182,6 +183,24 @@ pre code {
     left: 50%;
     margin-left: -30px;
     height: 60px;
+}
+
+.filters {
+    margin: 16px 96px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.filter {
+    float: left;
+    margin: 3px;
+    padding: 6px;
+    color: #C0C0C0;
+    background: rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 2px black;
 }
 
 /* post.html */

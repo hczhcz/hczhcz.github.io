@@ -1,7 +1,9 @@
 var size_x = 200;
 var size_y = 120;
 
-var hastagprefix = "_hastag";
+var hastagprefix = "hastag";
+
+var tagset = {};
 
 // Post list (div)
 var posts = $("<div />")
@@ -78,9 +80,16 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
         .appendTo(pcdiv);
 
     var addtag = function(tagname, pdiv) {
+        if (tagset[tagname] !== true) {
+            $("<div />")
+                .text(tagname)
+                .addClass("filter")
+                .appendTo(filters);
+        }
+
         pdiv.addClass(hastagprefix + tagname);
 
-        //.appentTo(filters);
+        tagset[tagname] = true;
     }
 
     // Inner link
