@@ -88,20 +88,22 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
                     var thistag = $(this).text();
                     if(tagmode[thistag] === 1) {
                         tagmode[thistag] = 2;
+                        $(this).fadeTo(100, 0.6);
                     } else if (tagmode[thistag] === 2) {
                         tagmode[thistag] = 0;
+                        $(this).fadeTo(100, 1);
                     } else {
                         tagmode[thistag] = 1;
+                        $(this).fadeTo(100, 0.8);
                     }
 
                     posts.isotope({
                         filter: function() {
                             for (var item in tagmode) {
                                 var hastag = $(this).hasClass(hastagprefix + item);
-                                if (tagmode[item] === 1 && hastag) {
-                                    return true;
-                                }
-                                if (tagmode[item] === 2 && !hastag) {
+                                if (tagmode[item] === 1 && !hastag) {
+                                    return false;
+                                } else if (tagmode[item] === 2 && hastag) {
                                     return false;
                                 }
                             }
