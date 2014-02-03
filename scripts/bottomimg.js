@@ -1,3 +1,4 @@
+// Bottom img
 var iblast = 0; // 1->top 2->bottom
 
 var ib = $("<img />")
@@ -8,31 +9,13 @@ var ib = $("<img />")
 
 ib.attr("src", window.ibname);
 
+// Bottom div
 var tbenable = false;
-
-var tbupdate = function() {
-    if (
-        $(window).scrollTop() + $(window).height() === $(document).height()
-        &&
-        $(window).scrollTop() > 0
-    ) {
-        tbenable = true;
-    }
-
-    if (tbenable) {
-        tb.cutfx().animate({
-            "height": ib.height()
-        }, 800, "easeOutBounce");
-    } else {
-        tb.cutfx().animate({
-            "height": 0
-        }, 800, "easeOutBounce");
-    }
-}
 
 var tb = $("<div />")
     .addClass("div_bottom")
     .attr("id", "div_bottom")
+    .height(0)
     .appendTo("body");
 
 $("<div />")
@@ -44,6 +27,7 @@ var isbuttom = function() {
     return tbenable || $(window).scrollTop() + $(window).height() > $(document).height() - ib.height();
 }
 
+// Check and fix size
 var oldw = 0;
 var fixsize = function() {
     var neww = Math.max(
@@ -54,6 +38,7 @@ var fixsize = function() {
     );
 
     if (oldw !== neww || (ib.queue("fx").length == 0 && ib.width() !== neww)) {
+        iblast = 0;
         if (isbuttom()) {
             ib
                 .cutfx()
@@ -69,14 +54,23 @@ var fixsize = function() {
                     bottom: - neww / 9
                 });
         }
+
+        if (tbenable) {
+            tb
+                .cutfx()
+                .animate({
+                    "height": neww / 3
+                }, 800, "easeOutBounce");
+        }
+
+        $("body")
+            .cutfx()
+            .animate({
+                "padding-bottom": neww / 3
+            });
+
         oldw = neww;
     }
-
-    $("body").cutfx().animate({
-        "padding-bottom": ib.height()
-    });
-
-    tbupdate();
 }
 
 var gotop = function() {
@@ -106,20 +100,49 @@ var gobottom = function() {
     }
 }
 
+var tbupdate = function() {
+    if (
+        $(window).scrollTop() + $(window).height() === $(document).height()
+        &&
+        $(window).scrollTop() > 0
+    ) {
+        tbenable = true;
+    }
+
+    if (tbenable) {
+        tb
+            .cutfx()
+            .animate({
+                "height": ib.height()
+            }, 800, "easeOutBounce");
+
+        gotop();
+    } else {
+        tb
+            .cutfx()
+            .animate({
+                "height": 0
+            }, 800, "easeOutBounce");
+
+        gobottom();
+    }
+}
+
 var tboff = function() {
     tbenable = false;
     tbupdate();
-    gobottom();
+}
+
+var tbon = function() {
+    tbenable = true;
+    tbupdate();
 }
 
 // Events
 ib
     .mouseenter(gotop)
     .mouseleave(gobottom)
-    .click(function() {
-        tbenable = true;
-        tbupdate();
-    })
+    .click(tbon)
     .load(function() {
         // Start up animation
         gotop();
