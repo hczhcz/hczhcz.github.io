@@ -88,7 +88,7 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
                     var thistag = $(this).text();
                     if(tagmode[thistag] === 1) {
                         tagmode[thistag] = 2;
-                    } else if (tagmode[thistag === 2]) {
+                    } else if (tagmode[thistag] === 2) {
                         tagmode[thistag] = 0;
                     } else {
                         tagmode[thistag] = 1;
@@ -106,7 +106,7 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
                                 }
                             }
 
-                            return false;
+                            return true;
                         }
                     });
                 })
