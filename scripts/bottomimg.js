@@ -11,6 +11,7 @@ ib.attr("src", window.ibname);
 
 // Bottom div
 var tbenable = false;
+var tbdelay = false;
 
 var tb = $("<div />")
     .addClass("div_bottom")
@@ -110,21 +111,25 @@ var tbupdate = function() {
     }
 
     if (tbenable) {
+        tbdelay = true;
+
         tb
             .cutfx()
             .animate({
                 "height": ib.height()
-            }, 800, "easeOutBounce");
+            }, 800, "easeOutBounce", function() {tbdelay = false;});
 
         gotop();
     } else {
-        tb
-            .cutfx()
-            .animate({
-                "height": 0
-            }, 800, "easeOutBounce");
+        if (!tbdelay) {
+            tb
+                .cutfx()
+                .animate({
+                    "height": 0
+                }, 800, "easeOutBounce");
 
-        gobottom();
+            gobottom();
+        }
     }
 }
 

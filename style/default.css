@@ -201,6 +201,7 @@ pre code {
     color: #C0C0C0;
     background: rgba(255, 255, 255, 0.2);
     text-shadow: 2px 2px 2px black;
+    cursor: pointer;
 }
 
 /* post.html */
