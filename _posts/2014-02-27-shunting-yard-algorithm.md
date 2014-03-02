@@ -51,13 +51,15 @@ Abstract Syntax Tree，抽象代码树。我们看到的代码，大部分都可
 
 仍然以`1+2*3`为例，它可以构成一棵二叉树：
 
-       +
-     /   \
-    1     *
-         / \
-        2   3
-    
-    1 + 2 * 3
+{% highlight text linenos %}
+   +
+ /   \
+1     *
+     / \
+    2   3
+
+1 + 2 * 3
+{% endhighlight %}
 
 <del>加号没有垂直对齐，强迫症们对不起咯～哦哈哈哈～</del>
 
@@ -88,15 +90,17 @@ Abstract Syntax Tree，抽象代码树。我们看到的代码，大部分都可
 
 如果用上面的第二种理解方式，我们将结合能力标注为o，将被结合能力标注为x（我不是故意的=w=），那么：
 
-    1+2*3
-    x1x o+o x2x o*o x3x
-    x1x o+o x(2*3)x
-    x(1+(2*3))x
+{% highlight text linenos %}
+1+2*3
+x1x o+o x2x o*o x3x
+x1x o+o x(2*3)x
+x(1+(2*3))x
 
-    -2.5!
-    x-o x2.5x o!x
-    x-o x(2.5!)x
-    x(-(2.5!))x
+-2.5!
+x-o x2.5x o!x
+x-o x(2.5!)x
+x(-(2.5!))x
+{% endhighlight %}
 
 到这里，中缀表达式转换为AST的问题已经解决了大半，还差一点：我们如何来执行这个<del>ooxx</del>结合过程。
 
