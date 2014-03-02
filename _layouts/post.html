@@ -16,6 +16,22 @@ layout: default
 
 </div>
 
+<div class="prenext">
+
+<p>{% if page.next.next %}<a href="{{page.next.next.url}}">&gt; {{page.next.next.title}}</a>{% else %}<del>&gt; &amp;gt;&amp;nbsp;&amp;lt;</del>{% endif %}</p>
+
+<p>{% if page.next %}<a href="{{page.next.url}}">&gt;&gt; {{page.next.title}}</a>{% else %}<del>&gt;&gt; NaN.00</del>{% endif %}</p>
+
+<p>&gt;&gt;&gt; {{page.title}}
+
+<p>{% if page.previous %}<a href="{{page.previous.url}}">&gt;&gt;&gt;&gt; {{page.previous.title}}</a>{% else %}<del>&gt;&gt;&gt;&gt; 烫烫烫烫烫</del>{% endif %}</p>
+
+<p>{% if page.previous.previous %}<a href="{{page.previous.previous.url}}">&gt;&gt;&gt;&gt;&gt; {{page.previous.previous.title}}</a>{% else %}<del>&gt;&gt;&gt;&gt;&gt; 锟斤拷</del>{% endif %}</p>
+
+<p><a href="/">&lt;&lt;&lt;&lt;&lt;&lt;</a></p>
+
+</div>
+
 <div class="footer">
 
 {% include cc-by-sa.html %}

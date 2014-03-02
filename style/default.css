@@ -17,9 +17,12 @@ body {
 
 .blog p,
 h1, h2, h3, h4, h5, h6,
-ul, ol, pre
-{
+ul, ol, pre {
     margin: 12px 0;
+}
+
+.hint p, .header p, .prenext p, .footer p {
+    margin: 2px 0;
 }
 
 a {
@@ -73,7 +76,7 @@ pre code {
     padding: 0 10%;
 }
 
-.hint, .header, .blog, .footer {
+.hint, .header, .blog, .prenext, .footer {
     margin: 2px;
     padding: 6px;
     overflow: hidden;
