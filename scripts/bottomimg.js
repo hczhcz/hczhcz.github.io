@@ -60,7 +60,7 @@ var fixsize = function() {
             tb
                 .cutfx()
                 .animate({
-                    "height": neww / 3
+                    height: neww / 3
                 }, 800, "easeOutBounce");
         }
 
@@ -116,7 +116,7 @@ var tbupdate = function() {
         tb
             .cutfx()
             .animate({
-                "height": ib.height()
+                height: ib.height()
             }, 800, "easeOutBounce", function() {tbdelay = false;});
 
         gotop();
@@ -125,7 +125,7 @@ var tbupdate = function() {
             tb
                 .cutfx()
                 .animate({
-                    "height": 0
+                    height: 0
                 }, 800, "easeOutBounce");
 
             gobottom();
