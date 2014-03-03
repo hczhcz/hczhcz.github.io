@@ -4,7 +4,7 @@ layout: default
 
 <div class="header">
 
-<h1 class="blogtitle"><a href="{{ page.url }}">{{ page.title }}</a></h1>
+<h1 class="blogtitle"><a href="/">{{ page.title }}</a></h1>
 <p class="blogdate">{{ page.date | date: "%Y-%m-%d" }}</p>
 <p class="blogtags">{% for tag in page.tags %}{{tag}}{% if forloop.last == false %}, {% endif %}{% endfor %}</p>
 
@@ -22,7 +22,7 @@ layout: default
 
 <p>{% if page.next %}<a href="{{page.next.url}}">&gt;&gt; {{page.next.title}}</a>{% else %}<del>&gt;&gt; NaN.00</del>{% endif %}</p>
 
-<p>&gt;&gt;&gt; {{page.title}}
+<p><a href="{{ page.url }}">&gt;&gt;&gt; {{page.title}}</a></p>
 
 <p>{% if page.previous %}<a href="{{page.previous.url}}">&gt;&gt;&gt;&gt; {{page.previous.title}}</a>{% else %}<del>&gt;&gt;&gt;&gt; 烫烫烫烫烫</del>{% endif %}</p>
 
