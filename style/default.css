@@ -21,10 +21,6 @@ ul, ol, pre {
     margin: 12px 0;
 }
 
-.hint p, .header p, .prenext p, .footer p {
-    margin: 2px 0;
-}
-
 a {
     color: black;
     text-decoration: none;
@@ -32,10 +28,7 @@ a {
 }
 
 .blog a {
-    margin-right: 3px;
-    padding: 0 2px;
-    box-shadow: 2px 2px 2px #888888;
-    box-shadow: 2px 2px 1px rgba(128, 128, 128, 0.6);
+    color: #000040;
 }
 
 ul, ol {
@@ -50,13 +43,13 @@ hr {
 blockquote {
     border-left: 6px solid rgba(255, 255, 255, 0.4);
     margin: 12px 0;
-    padding: 6px;
+    padding: 6px 12px;
     background: white;
     background: rgba(255, 255, 255, 0.2);
 }
 
 code {
-    margin: 6px;
+    margin: 0 4px;
     padding: 4px;
     height: 18px;
     background: white;
@@ -68,6 +61,7 @@ pre code {
     margin: 12px 0;
     padding: 0;
     height: auto;
+    line-height: normal;
 }
 
 /* content */
@@ -78,10 +72,11 @@ pre code {
 
 .hint, .header, .blog, .prenext, .footer {
     margin: 2px;
-    padding: 6px;
+    padding: 6px 12px;
     overflow: hidden;
     background: white;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
 }
 
 /* index.html */
@@ -129,7 +124,7 @@ pre code {
     left: 2px;
     right: 2px;
     background: white;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.75);
 }
 
 .postlink, .posttags {
@@ -152,10 +147,11 @@ pre code {
 }
 
 .posttitle {
-    margin: 0;
+    margin: 6px 0;
 }
 
 .postdetail {
+    line-height: 1.35;
 }
 
 .posttags {
