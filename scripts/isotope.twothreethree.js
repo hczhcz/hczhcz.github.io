@@ -11,7 +11,7 @@ $.ajax({
                 result[item].link,
                 $("<p />")
                     .text(result[item].text),
-                [[1, 1], [1, 1], [2, 1]]
+                [[1, 1]]
             );
         }
     }

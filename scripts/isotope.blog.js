@@ -8,6 +8,6 @@ $("#posts").post(
     "{{ post.title }}",
     "{{ post.url }}",
     $("<p />").text("{{ post.abstract }}"),
-    [[1, 2], [1, 2], [2, 1], [2, 2]]
+    [[1, 2], [1, 2], [2, 2]]
 );
 {% endfor %}
