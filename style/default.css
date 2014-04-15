@@ -18,7 +18,7 @@ body {
 .blog p,
 h1, h2, h3, h4, h5, h6,
 ul, ol, pre {
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 a {
@@ -37,12 +37,12 @@ ul, ol {
 
 hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 blockquote {
     border-left: 6px solid rgba(255, 255, 255, 0.4);
-    margin: 12px 0;
+    margin: 6px 0;
     padding: 6px 12px;
     background: white;
     background: rgba(255, 255, 255, 0.2);
@@ -58,7 +58,7 @@ code {
 
 pre code {
     display: block;
-    margin: 12px 0;
+    margin: 6px 0;
     padding: 0;
     height: auto;
     line-height: normal;
