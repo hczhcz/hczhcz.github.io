@@ -2,7 +2,7 @@
 layout: post
 title: 用来泡茶的超文本咖啡壶控制协议
 abstract: IETF发布了超文本咖啡壶控制协议（HTCPCP）的续篇——HTCPCP-TEA，在HTCPCP的基础上定义了一套控制茶壶的协议。
-tags: Humour Internet IETF
+tags: Humor Internet IETF
 ---
 
 HTCPCP
