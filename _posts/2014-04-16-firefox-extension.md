@@ -162,3 +162,5 @@ Flock Browser       {a463f10c-3994-11da-9945-000d60ca027b}
 ###其它
 
 还有`strictCompatibility`、`unpack`、`localized`、`bootstrap`等项目，这里不一一解释，可以在[Mozilla开发者网络](https://developer.mozilla.org/en-US/Add-ons/)找到更多信息。
+
+我们在[下篇](/2014/04/28/firefox-extension-2.html)继续介绍其余文件。
