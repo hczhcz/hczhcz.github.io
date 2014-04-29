@@ -15,7 +15,6 @@ body {
     overflow-x: hidden;
 }
 
-.blog p,
 h1, h2, h3, h4, h5, h6,
 ul, ol, pre {
     margin: 6px 0;
@@ -37,12 +36,12 @@ ul, ol {
 
 hr {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    margin: 12px 0;
+    margin: 24px 0;
 }
 
 blockquote {
     border-left: 6px solid rgba(255, 255, 255, 0.4);
-    margin: 6px 0;
+    margin: 12px 0 18px 0;
     padding: 6px 12px;
     background: white;
     background: rgba(255, 255, 255, 0.2);
@@ -58,10 +57,11 @@ code {
 
 pre code {
     display: block;
-    margin: 6px 0;
+    margin: 12px 0 18px 0;
     padding: 0;
     height: auto;
     line-height: normal;
+    overflow-x: auto;
 }
 
 /* content */
@@ -214,6 +214,10 @@ pre code {
 
 .blog {
     border-left: 6px solid rgba(255, 255, 255, 0.4);
+}
+
+.blog p {
+    margin: 12px 0 18px 0;
 }
 
 .blogdate {
