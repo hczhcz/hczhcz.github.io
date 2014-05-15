@@ -4,3 +4,5 @@ future:   true
 lsi:      true
 feedurl:  "http://hczhcz.github.io"
 markdown: kramdown
+gems:
+    - jekyll-sitemap
