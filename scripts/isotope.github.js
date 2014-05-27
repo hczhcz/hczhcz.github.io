@@ -18,8 +18,15 @@ $.ajax({
                 result[item].name,
                 result[item].html_url,
                 $("<p />")
-                    .text(result[item].description),
-                [[1, 2], [2, 1], [2, 1], [2, 2]]
+                    .html(
+                        result[item].description
+                        + "</br>" + "[W " + result[item].watchers_count + "]"
+                        + " "     + "[S " + result[item].stargazers_count + "]"
+                        + " "     + "[F " + result[item].forks_count + "]"
+                        + "</br>" + "[Size " + result[item].size + "]"
+                        + "</br>" + "[Issue " + result[item].open_issues_count + "]"
+                    ),
+                [[1, 2], [2, 1], [2, 2]]
             );
         }
     }
