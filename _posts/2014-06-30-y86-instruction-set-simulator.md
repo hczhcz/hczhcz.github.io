@@ -98,4 +98,25 @@ yr_st  = 0xF  // Non-standard: MM7: Stat
 
 `yrl_rex`和`yrl_rey`是执行位置的指针，用于环境切换。为了获得程序当前执行到的位置（`EIP`），我们使用`call`指令——它会将当前的`EIP`压栈。根据离开内部环境时的`EIP`和对应表`x_map`，我们就能推算出Y86中`PC`的值。每次从外部环境进入内部环境前后，都会有一个`EIP`与`PC`之间的转换过程。
 
-后面，我们将介绍“中间过程”的作用，以及模拟器对一些特殊的Y86指令的处理方式。
+状态码
+---
+
+Y86标准的状态有：正常（`AOK`）、停机（`hlt`）、错误（`adr`、`ins`）。
+
+为了方便模拟器内部的信息交换，我将状态扩展到了11个，并且分别约定了状态码：
+
+{% highlight c linenos %}
+ys_aok = 0x0, // Started (running)
+ys_hlt = 0x1, // Halted
+ys_adr = 0x2, // Address error
+ys_ins = 0x3, // Instruction error
+ys_clf = 0x4, // Non-standard: Loader error
+ys_ccf = 0x5, // Non-standard: Compiler error
+ys_adp = 0x6, // Non-standard: ADR error caused by mem protection
+ys_inp = 0x7, // Non-standard: INS error caused by mem protection
+ys_ima = 0x8, // Non-standard: Memory access interrupt
+ys_imc = 0x9, // Non-standard: Memory changed interrupt
+ys_ret = 0xA  // Non-standard: Ret interrupt
+{% endhighlight %}
+
+[下篇](/2014/07/09/y86-instruction-set-simulator-2.html)中，我们将介绍“中间过程”的作用，以及模拟器对一些特殊的Y86指令的处理方式。

@@ -30,6 +30,8 @@ Y86出自[《深入理解计算机系统》（CSAPP）](http://www.csapp.cs.cmu.
 * 没有IO（嗯…你可以猜一下什么东西取代了IO）；
 * 比x86更宽松、更整齐的二进制格式。
 
+![Y86 Instruction Set](/images/2014-06-13-y86-instruction-set.png)
+
 下面来说说Y86中的那些指令——
 
 指令：计算与无条件mov
