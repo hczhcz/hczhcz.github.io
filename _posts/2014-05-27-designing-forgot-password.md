@@ -2,7 +2,7 @@
 layout: post
 title: “忘记密码”的场景与设计问题
 abstract: 有用户登陆功能的网站通常包括用户密码（口令）验证，以及一些应对用户忘记用户名、密码的措施，与“忘记密码”相关的设计问题看似简单，但要理解透彻其实并不容易。
-tags: Web Security Rule
+tags: Web Security Password
 ---
 
 从网络上流传的一幅图说起——
