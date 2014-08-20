@@ -1,4 +1,4 @@
-window.bgname = "/bgimages/" + Math.floor(Math.random() * 20) + ".jpg";
+window.bgname = "/bgimages/" + Math.floor(Math.random() * 12) + ".jpg";
 window.ibname = "/bgimages/black_min.png";
 
 var img = new Image();
