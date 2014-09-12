@@ -52,13 +52,13 @@ Abstract Syntax Tree，抽象代码树。我们看到的代码，大部分都可
 仍然以`1+2*3`为例，它可以构成一棵二叉树：
 
 {% highlight text linenos %}
-   +
- /   \
-1     *
-     / \
-    2   3
+Root   +
+     /   \
+    1     *
+         / \
+        2   3
 
-1 + 2 * 3
+    1 + 2 * 3
 {% endhighlight %}
 
 <del>加号没有垂直对齐，强迫症们对不起咯～哦哈哈哈～</del>
@@ -91,21 +91,21 @@ Abstract Syntax Tree，抽象代码树。我们看到的代码，大部分都可
 画成树就是：
 
 {% highlight text linenos %}
-    -
-  /   \
-nil    !
-     /   \
-   2.5   nil
+Root    -
+      /   \
+    nil    !
+         /   \
+       2.5   nil
 {% endhighlight %}
 
 去掉nil得到：
 
 {% highlight text linenos %}
- -
- |
- !
- |
-2.5
+Root -
+     |
+     !
+     |
+    2.5
 {% endhighlight %}
 
 另外，数字或常量、变量本身，可以理解为左右两侧都加上nil的运算符。
