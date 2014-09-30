@@ -2,7 +2,7 @@
 layout: post
 title: Y86指令集（介绍篇）
 abstract: 本篇介绍指令集的特性。Y86出自《深入理解计算机系统》（CSAPP），是一个简化的、与x86相近的指令集，去除了x86中一些复杂的细节以用于教学。
-tags: System Assembly
+tags: System Assembly Y86
 ---
 
 Y86的[模拟器、汇编器](https://github.com/hczhcz/y86)是我们的一项作业。我决定写几篇博客来梳理一些关于它的技术要点。

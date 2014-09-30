@@ -2,7 +2,7 @@
 layout: post
 title: Y86指令集（模拟器篇-下篇）
 abstract: 本篇介绍指令集模拟器的JIT编译实现。Y86出自《深入理解计算机系统》（CSAPP），是一个简化的、与x86相近的指令集，去除了x86中一些复杂的细节以用于教学。
-tags: System Assembly
+tags: System Assembly Y86
 ---
 
 接[上篇](/2014/06/30/y86-instruction-set-simulator.html)，我们从“中间环境”开始，分析模拟器实现中一些关键的部分。
