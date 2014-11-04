@@ -128,6 +128,16 @@ pre code {
     left: 2px;
     right: 2px;
     background: white;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.postcontentx {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background: white;
     background: rgba(255, 255, 255, 0.75);
 }
 

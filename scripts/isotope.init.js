@@ -59,7 +59,7 @@ var filters = $("<div />")
     .appendTo("#div_bottom");
 
 // To add data
-jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
+jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes, highlight) {
     // Choose one from the size list
     var size = sizes[Math.floor(Math.random() * sizes.length)];
 
@@ -72,7 +72,7 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes) {
 
     // Inner
     var pcdiv = $("<div />")
-        .addClass("postcontent")
+        .addClass(highlight ? "postcontentx" : "postcontent")
         .appendTo(pdiv);
 
     var pca = $("<a />")

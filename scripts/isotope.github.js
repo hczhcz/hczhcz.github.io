@@ -26,7 +26,8 @@ $.ajax({
                         + "</br>" + "[Size " + result[item].size + "]"
                         + "</br>" + "[Issue " + result[item].open_issues_count + "]"
                     ),
-                [[1, 2], [2, 1], [2, 2]]
+                [[1, 2], [2, 1], [2, 2]],
+                false
             );
         }
     }
