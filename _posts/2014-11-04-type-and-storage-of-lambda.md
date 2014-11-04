@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C++11 Lambda函数闭包的类型与存储形式
-abstract: 。
+abstract: C++11引入了Lambda函数，对于非就地使用的Lambda函数，闭包的存储需要一些特定的技巧。
 tags: C++ Memory
 ---
 
