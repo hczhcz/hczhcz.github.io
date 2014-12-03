@@ -2,6 +2,16 @@ var buttombox = $("<div />")
     .addClass("buttom_inner")
     .appendTo("#div_bottom");
 
+$("<h1 />")
+    .addClass("bgtext1")
+    .text("Filters")
+    .appendTo(buttombox);
+
+$("<h1 />")
+    .addClass("bgtext2")
+    .text("Links")
+    .appendTo(buttombox);
+
 $("<div />")
     .addClass("filters")
     .attr("id", "filters")
@@ -34,16 +44,6 @@ $("<div />")
         }
     })
     .appendTo(buttombox);
-
-$("<h1 />")
-    .addClass("bgtext1")
-    .text("Filters")
-    .appendTo("#div_bottom");
-
-$("<h1 />")
-    .addClass("bgtext2")
-    .text("Links")
-    .appendTo("#div_bottom");
 
 $(function () {
     function addLink(text, link) {

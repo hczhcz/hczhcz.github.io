@@ -251,18 +251,32 @@ pre code {
 
 .bgtext1 {
     position: absolute;
-    bottom: 16px;
-    left: 48px;
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 100px;
+    bottom: 0;
+    right: 25%;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 200px;
+    line-height: 200px;
+    pointer-events: none;
 }
 
 .bgtext2 {
     position: absolute;
-    bottom: 16px;
-    right: 48px;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 80px;
+    bottom: -100px;
+    left: 75%;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 100px;
+    line-height: 100px;
+    pointer-events: none;
+    transform: rotate(270deg);
+    transform-origin: 0% 0%;
+    -ms-transform: rotate(270deg);
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform: rotate(270deg);
+    -webkit-transform-origin: 0% 0%;
+    -moz-transform: rotate(270deg);
+    -moz-transform-origin: 0% 0%;
+    -o-transform: rotate(270deg);
+    -o-transform-origin: 0% 0%;
 }
 
 /* post.html */
