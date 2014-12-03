@@ -41,23 +41,6 @@ var posts = $("<div />")
     })
     .appendTo("#content");
 
-// Tag filterr list (div)
-var filters = $("<div />")
-    .addClass("filters")
-    .attr("id", "filters")
-    .isotope({
-        layoutMode: "fitRows",
-        itemSelector: ".filter",
-        sortBy: "tag",
-        sortAscending: true,
-        getSortData: {
-            tag: function(item) {
-                return $(item).text();
-            }
-        }
-    })
-    .appendTo("#div_bottom");
-
 // To add data
 jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes, highlight) {
     // Choose one from the size list
@@ -83,7 +66,7 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes, highlig
         if (!tagset[tagname]) {
             var filterdiv = $("<div />")
                 .text(tagname)
-                .addClass("filter")
+                .addClass("button")
                 .click(function() {
                     var thistag = $(this).text();
                     if(tagmode[thistag] === 1) {
@@ -112,9 +95,9 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes, highlig
                         }
                     });
                 })
-                .appendTo(filters);
+                .appendTo("#filters");
 
-            filters.isotope("insert", filterdiv);
+            $("#filters").isotope("insert", filterdiv);
         }
 
         pdiv.addClass(hastagprefix + tagname);
@@ -144,7 +127,8 @@ jQuery.fn.extend({post: function(date, tags, title, link, detail, sizes, highlig
             .addClass("postdate")
             .appendTo(pca);
 
-        addtag(date.substr(0, 7), pdiv);
+        // addtag(date.substr(0, 7), pdiv);
+        addtag(date.substr(0, 4), pdiv);
     }
 
     if (title !== undefined && title !== "") {

@@ -85,35 +85,6 @@ pre code {
 
 /* index.html */
 
-.img_bottom {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.div_bottom {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #202020;
-    box-shadow: 0 -2px 2px #808080;
-    opacity: 0.96;
-    overflow: hidden;
-}
-
-.div_bottom_shadow {
-    position: absolute;
-    top: -3px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    box-shadow: 0 3px 2px 1px #181818;
-}
-
 .posts {
     margin: 0 auto;
 }
@@ -188,6 +159,35 @@ pre code {
     height: 18px;
 }
 
+.img_bottom {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.div_bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #202020;
+    box-shadow: 0 -2px 2px #808080;
+    opacity: 0.96;
+    overflow: hidden;
+}
+
+.div_bottom_shadow {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    box-shadow: 0 3px 2px 1px #181818;
+}
+
 .bigicon {
     position: absolute;
     top: 50%;
@@ -205,23 +205,64 @@ pre code {
     height: 60px;
 }
 
-.filters {
-    margin: 16px 96px;
+.buttom_inner {
     position: absolute;
+    top: 16px;
+    bottom: 16px;
+    left: 96px;
+    right: 96px;
+}
+
+.filters {
+    position: absolute !important;
     top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 25%;
+    height: auto !important;
 }
 
-.filter {
-    float: left;
+.links {
+    position: absolute !important;
+    top: 0;
+    bottom: 0;
+    left: 75%;
+    right: 0;
+    height: auto !important;
+}
+
+.button {
     margin: 3px;
     padding: 6px;
     color: #C0C0C0;
     background: rgba(255, 255, 255, 0.2);
     text-shadow: 2px 2px 2px black;
     cursor: pointer;
+}
+
+.button2 {
+    margin: 3px;
+    padding: 6px;
+    color: #C0C0C0;
+    background: rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+.bgtext1 {
+    position: absolute;
+    bottom: 16px;
+    left: 48px;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 100px;
+}
+
+.bgtext2 {
+    position: absolute;
+    bottom: 16px;
+    right: 48px;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 80px;
 }
 
 /* post.html */
