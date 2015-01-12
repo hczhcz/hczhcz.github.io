@@ -8,7 +8,7 @@ tags: Humor Internet IETF
 HTCPCP
 ---
 
-每年愚人节，除了喜闻乐见的整人活动外，我还会期待一件有趣的事情，那就是IETF（互联网工程任务组）已经持续二十多年的[愚人节恶搞RFC](https://en.wikipedia.org/wiki/April_Fools%27_Day_Request_for_Comments)发布。
+每年愚人节，除了喜闻乐见的整人活动外，我还会期待一件有趣的事情，那就是IETF（互联网工程任务组）已经持续二十多年的[愚人节恶搞RFC](http://en.wikipedia.org/wiki/April_Fools%27_Day_Request_for_Comments)发布。
 
 往年恶搞RFC的经典作品包括[Telnet随机丢<del>节操</del>数据](https://tools.ietf.org/html/rfc748)、[使用鸟类进行通信的IPoAC协议](https://tools.ietf.org/html/rfc1149)、[无限猴子协定组](https://tools.ietf.org/html/rfc2795)、[TCP封包心情选项](https://tools.ietf.org/html/rfc5841)等。其中，IPoAC协议在1999年有了[续篇](https://tools.ietf.org/html/rfc2549)。
 
