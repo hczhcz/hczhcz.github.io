@@ -9,7 +9,7 @@ tags: Compiler MyLang
 
 > 我们的项目托管在[GitHub上](https://github.com/gaocegege/CompilerLab)。
 
-因此，近期的几篇博文将关于这个编译器展开，并且会随着编译器的开发进程逐步更新。本篇先从语言的设计开始。之后会依次介绍[语法分析](/2014/12/14/designing-a-compiler-parser.html)、语义分析及代码生成等
+因此，近期的几篇博文将关于这个编译器展开，并且会随着编译器的开发进程逐步更新。本篇先从语言的设计开始。之后会依次介绍[语法分析](/2014/12/14/designing-a-compiler-parser.html)、[中间表示翻译](/2015/01/18/designing-a-compiler-mir-generation.html)、语义分析及代码生成等
 
 原版MyLang
 ---

@@ -137,7 +137,7 @@ MyParser的C++库是完全用头文件配合模板展开完成的。将C++库与
 
 它们由C++库实现。
 
-先从`MP_STR`说起。这个宏将字符串如`"hello"`打散成字符`'h', 'e', 'l', 'l', 'o'`，然后返回一个编译时字符串类。其中使用的方法比较简单粗暴，展开`"hello"[0], "hello"[1], ...`而已。我们可以用编译时字符串类给AST节点标注类型。
+先从`MP_STR`说起。这个宏将字符串如`"hello"`打散成字符`'h', 'e', 'l', 'l', 'o'`，然后返回一个编译时字符串类。其中使用的方法比较简单粗暴，展开`"hello"[0], "hello"[1], ...`而已。我们可以用编译时字符串类给AST（抽象代码树）节点标注类型。
 
 AST节点分为`List`、`Text`和`Error`。
 
@@ -147,7 +147,7 @@ AST节点分为`List`、`Text`和`Error`。
 
 继续使用之前的例子，“hello, world!”会被这样扫描：
 
-{% highlight text linenos %}
+{% highlight c++ linenos %}
 hello, world!
 ^ <root>
 ^ <greet>
@@ -220,6 +220,6 @@ some part:
 
 那么，当Parser发现不可能正确匹配时，会返回第一种，因为它已匹配的部分最长。
 
-为了继续处理大量不同的AST节点，MyParser包含一个被称为“Pass”的模块，实现对节点的访问（即“visitor模式”）。MyLang实现中使用它将AST翻译成语义分析所需的中间表示形式。AST格式化输出、语法高亮等功能也是基于这个模块完成的。
+为了继续处理大量不同的AST节点，MyParser包含一个被称为`Pass`的模块，实现对节点的访问（即“visitor模式”）。MyLang实现中使用它[将AST翻译成语义分析所需的中间表示形式](/2015/01/18/designing-a-compiler-mir-generation.html)。AST格式化输出、语法高亮等功能也是基于这个模块完成的。
 
 MyParser的代码在[这里](https://github.com/hczhcz/myparser)。其中用到大量的C++模板，获得灵活性、运行性能的同时也会增加编译耗时和代码的复杂程度。
