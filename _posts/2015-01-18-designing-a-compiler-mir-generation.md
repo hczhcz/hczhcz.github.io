@@ -134,17 +134,17 @@ end
 由于[MyParser](https://github.com/hczhcz/myparser)是一个LL分析器，它接受的语法是不包含左递归的。我们会发现，`A-B+C`可以自然地被解析成`(A-(B+C))`，但是无法直接得到`((A-B)+C)`。
 
 {% highlight text linenos %}
-   -
- /   \
-A     +
-     / \
-    B   C
+Bad    -
+     /   \
+    A     +
+         / \
+        B   C
 
-     +
-   /   \
-  -     C
- / \
-A   B
+Good     +
+       /   \
+      -     C
+     / \
+    A   B
 {% endhighlight %}
 
 这就需要在将AST变换为libblock中间表示的过程中，完成一组“旋转”操作。
