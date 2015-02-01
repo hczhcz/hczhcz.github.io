@@ -59,13 +59,17 @@ $(function () {
     }
 
     addLink("Azard", "http://azard.me/");
-    addLink("breeswish", "https://breeswish.org/blog/");
-    addLink("飞龙", "http://www.flygon.net/");
-    addLink("测测", "http://gaocegege.com/Blog/");
+    addLink("Belleve", "http://typeof.net/");
+    addLink("Breeswish", "https://breeswish.org/blog/");
+    addLink("Ivan", "ivanavalon.com/");
     addLink("Kim Leo", "http://blog.kimleo.net/");
-    addLink("neutronest", "http://www.dc-fpml.org/");
+    addLink("Neutronest", "http://www.dc-fpml.org/");
     addLink("Tim", "http://wuzhiwei.net/");
-    addLink("zacks", "http://scriptogr.am/zacks/");
+    addLink("YTLiu", "http://ytliu.info/");
     addLink("Z-Shang", "http://z-shang.github.io/");
+    addLink("Zacks", "http://scriptogr.am/zacks/");
+    addLink("Zhoutall", "http://zhoutall.com");
     addLink("左晗君", "http://35d6a7.lofter.com/");
+    addLink("测测", "http://gaocegege.com/Blog/");
+    addLink("飞龙", "http://www.flygon.net/");
 })

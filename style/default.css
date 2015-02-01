@@ -218,7 +218,7 @@ pre code {
     top: 0;
     bottom: 0;
     left: 0;
-    right: 25%;
+    right: 30%;
     height: auto !important;
 }
 
@@ -226,7 +226,7 @@ pre code {
     position: absolute !important;
     top: 0;
     bottom: 0;
-    left: 75%;
+    left: 70%;
     right: 0;
     height: auto !important;
 }
@@ -252,7 +252,7 @@ pre code {
 .bgtext1 {
     position: absolute;
     bottom: 0;
-    right: 25%;
+    right: 30%;
     color: rgba(0, 0, 0, 0.2);
     font-size: 200px;
     line-height: 200px;
@@ -262,7 +262,7 @@ pre code {
 .bgtext2 {
     position: absolute;
     bottom: -100px;
-    left: 75%;
+    left: 70%;
     color: rgba(255, 255, 255, 0.1);
     font-size: 100px;
     line-height: 100px;
