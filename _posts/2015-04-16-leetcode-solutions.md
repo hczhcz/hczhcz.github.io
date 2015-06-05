@@ -5,7 +5,9 @@ abstract: LeetCode是一个在线题库，收录了面试中常见的技术类�
 tags: Algorithm Leetcode
 ---
 
-[LeetCode](https://leetcode.com/)是一个在线题库，收录了面试中常见的技术类题目，题目的方向涵盖算法、数据库、Shell等。我前几天用闲暇时间在LeetCode上刷了些题，于是写一篇博客来讨论其中比较有趣的题目。
+[LeetCode](https://leetcode.com/)是一个在线题库，收录了面试中常见的技术类题目，题目的方向涵盖算法、数据库、Shell等。我前几天用闲暇时间在LeetCode上刷了些题，于是写一系列博客来讨论其中比较有趣的题目。
+
+不定期更新中：[第一篇](/2015/04/16/leetcode-solutions.html)，[第二篇](/2015/06/05/leetcode-solutions-2.html)
 
 Two Sum
 ---
