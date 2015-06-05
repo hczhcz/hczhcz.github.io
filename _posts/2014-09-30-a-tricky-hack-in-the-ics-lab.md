@@ -257,4 +257,4 @@ Loop0:
 
 另外，处理数据的头尾两端时，需要使用额外的指令，效率还是低了些，对于余项较少的情形，我们可以做专门的优化。
 
-完整的Y86代码可以在[这里](https://github.com/hczhcz/trick-n-trick/blob/master/ncopy_1.ys)找到。
+完整的Y86代码可以在[这里](https://github.com/hczhcz/trick-n-trick/blob/master/ics/ncopy_1.ys)找到。
