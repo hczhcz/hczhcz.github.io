@@ -69,7 +69,6 @@ $(function () {
     addLink("Z-Shang", "http://z-shang.github.io/");
     addLink("Zacks", "http://scriptogr.am/zacks/");
     addLink("Zhoutall", "http://zhoutall.com");
-    addLink("左晗君", "http://35d6a7.lofter.com/");
     addLink("测测", "http://gaocegege.com/Blog/");
     addLink("飞龙", "http://www.flygon.net/");
 })
