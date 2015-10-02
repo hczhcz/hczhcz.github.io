@@ -1,4 +1,4 @@
-var username = "hczhcz";
+var username = "gblym";
 
 $("#posts").post(
     "",
